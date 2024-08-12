@@ -1,17 +1,11 @@
 import random
 
 from fastapi import FastAPI, Depends
-from pydantic import BaseModel
+
+from src.schemas import SPassword
 
 
 app = FastAPI()
-
-
-class SPassword(BaseModel):
-    len: int = 8
-    nums: bool | None = True
-    symbols: bool | None = True
-    registry: bool | None = True
 
 
 @app.get("/")
