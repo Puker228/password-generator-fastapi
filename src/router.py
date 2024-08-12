@@ -4,10 +4,8 @@ from fastapi import APIRouter, Depends
 
 from src.schemas import SPassword
 
-router = APIRouter(
-    prefix='/password',
-    tags=['password']
-)
+router = APIRouter(prefix="/password", tags=["password"])
+
 
 @router.post("/new_password/")
 async def password(password: SPassword = Depends()):
